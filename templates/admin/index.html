@@ -1,0 +1,11 @@
+{% extends "admin/layout.html" %}
+{% block main_content %}
+	<div class="row">
+		<div class="col-md-12">
+			<h1>后台管理</h1>
+			{% if current_user.is_authenticated %}
+                <h3>Hi {{ current_user.id }}!</h3>
+            {% endif %}
+		</div>
+	</div>
+{% endblock %}

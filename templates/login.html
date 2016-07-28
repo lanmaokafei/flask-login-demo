@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block main_content %}
+	<div class="row">
+		<div class="col-md-4 col-md-offset-4">
+		<form action="#" method="POST">
+			<table>
+				<tr>
+					<td></td>
+					<td>管理员登陆</td>
+				</tr>
+				{% with messages = get_flashed_messages(with_categories=True) %}
+					{% if messages %}
+						<tr>
+							<td></td>
+							<td>
+								{% for c,msg in messages %}
+									<div class="alert alert-danger" role="alert">
+									<a href="#" class="close" data-dismiss="alert">&times;</a>
+									<strong>{{ c }}</strong>
+									{{msg}}
+									</div>
+								{% endfor %}
+							</td>
+						</tr>
+					{% endif %}
+				{% endwith %}
+				<tr>
+					<td>用户名</td>
+					<td><input type="text" name="username" placeholder="用户" /> </td>
+				</tr>
+				<tr>
+					<td>密码</td>
+					<td><input type="password" name="pwd" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>
+					<input type="submit" value="登陆" class="btn btn-primary" />
+					<a href="#" class="btn btn-default">返回首页</a>
+					</td>
+				</tr>
+			</table>
+			</form>
+		</div>
+	</div>
+{% endblock %}
